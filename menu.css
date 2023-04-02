@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 *,
-*:after
-*::before {
+*:after,
+*:before {
     margin: 0;
     box-sizing: border-box;
 
@@ -44,4 +44,49 @@ body {
     transition: width 0.2s ease-in;
     text-decoration: none;
     color: inherit;
+}
+
+.link:before{
+position: absolute;
+z-index: -1;
+content: "";
+display: block;
+border-radius: 99em;
+width: 100%;
+height: 100%;
+top: 0;
+transform: translateX(100%);
+transition: transform 0.2s ease-in;
+transform-origin: center right;
+background-color: #eee;
+
+}
+
+.link:hover, .link:focus {
+    outline: 0;
+    width: 140px;
+}
+
+.link:hover:before,
+.link:hover .link-title {
+    transform: translateX(0%);
+}
+
+.link-icon {
+    color: var(--color);
+    font-size: 27px !important;
+    display: block;
+    flex-shrink: 0;
+    left: 18px;
+    position: absolute;
+}
+
+.link-title {
+    color: var(--color);
+    transform: translateX(100%);
+    transition: transform 0.2s ease-in;
+    display: block;
+    text-align: center;
+    text-indent: 20px;
+    width: 100%;
 }
